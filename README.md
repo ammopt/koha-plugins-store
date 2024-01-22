@@ -55,3 +55,6 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+### Copy all files in the dist directory of Vue into the public directory of Express
+cp -r /path/to/vue/app/dist/* /path/to/express/app/public/
