@@ -1,0 +1,24 @@
+{
+  "name": "koha-plugins-store",
+  "version": "1.0.0",
+  "description": "Koha plugins store app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ammopt/koha-plugins-store.git"
+  },
+  "keywords": [
+    "koha",
+    "plugins",
+    "store"
+  ],
+  "author": "Pedro Amorim",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/ammopt/koha-plugins-store/issues"
+  },
+  "homepage": "https://github.com/ammopt/koha-plugins-store#readme"
+}
