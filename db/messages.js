@@ -1,5 +1,5 @@
-const Joi = require('joi');
-const db = require('./connection');
+import Joi from 'joi';
+import db from './connection.js';
 
 const schema = Joi.object().keys({
     username: Joi.string().alphanum().required(),
@@ -14,11 +14,11 @@ const schema = Joi.object().keys({
 
 const messages = db.get('messages');
 
-function getAll() {
+export function getAll() {
     return messages.find();
 }
 
-function create(message) {
+export function create(message) {
     if (!message.username) message.username = 'Anonymous';
 
     const result = Joi.validate(message, schema);
@@ -29,8 +29,3 @@ function create(message) {
         return Promise.reject(result.error);
     }
 }
-
-module.exports = {
-    create,
-    getAll
-};

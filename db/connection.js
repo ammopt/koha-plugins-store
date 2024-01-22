@@ -1,5 +1,6 @@
-const monk = require('monk');
+import monk from 'monk';
 const connectionString = process.env.MONGODB_URI || 'localhost/mevnStack';
 const db = monk(connectionString);
 
-module.exports = db;
+export default db;
+
