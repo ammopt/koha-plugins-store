@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
-import { getAll } from './db/messages.js';
+import * as plugins from './db/plugins.js';
 
 const app = express();
 
@@ -17,10 +17,18 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/messages', (req, res) => {
-    getAll().then((messages) => {
-        console.log('afinal');
-        res.json(messages);
+app.get('/plugins', (req, res) => {
+    plugins.getAll().then((plugins) => {
+        res.json(plugins);
+    });
+});
+
+app.post('/plugins', (req, res) => {
+    plugins.create(req.body).then((plugin) => {
+        res.json(plugin);
+    }).catch((error) => {
+        res.status(500);
+        res.json(error);
     });
 });
 

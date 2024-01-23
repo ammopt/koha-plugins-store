@@ -57,7 +57,16 @@ npm run lint
 ```
 
 ### Copy all files in the dist directory of Vue into the public directory of Express
+```sh
 cp -r /path/to/vue/app/dist/* /path/to/express/app/public/
+```
 
 ### Install mongodb and run
+```sh
 sudo systemctl start mongod
+```
+
+### Run the REST API
+```sh
+node index.js
+```
